@@ -1,0 +1,17 @@
+.profile-background{
+    background-color: #F6F6F6;
+}
+
+.jumbotron{
+    background-color: #fff;
+}
+
+.profile-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.details{
+    margin-top: 175px;
+}
