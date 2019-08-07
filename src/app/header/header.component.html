@@ -8,6 +8,11 @@
     </select>
   </div>
   <div class="form-group col-md-8">
-    <input type="searchUsers" class="form-control" id="searchUsers">
+    <input type="searchUsers" (keyup.enter)="searchUserOnEnter(searchKey)" [(ngModel)]="searchKey" class="form-control"
+      id="searchUsers">
+  </div>
+
+  <div class="col-md-12">
+    <p>Total Result : {{totalResults}}</p>
   </div>
 </div>

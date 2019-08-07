@@ -1,12 +1,6 @@
 <div class="container-fluid">
-  <app-header></app-header>
-  
-  <p>Total Result : 260</p>
-
-  <app-profile></app-profile>
-  <app-profile></app-profile>
-  <app-profile></app-profile>
-  <app-profile></app-profile>
-  <app-profile></app-profile>
-  <app-profile></app-profile>
+  <app-header (onsearch)="onsearch($event)"></app-header>
+  <div *ngIf="gitUsers.length > 0">
+    <app-profile *ngFor="let gitUser of gitUsers" [gitUser]="gitUser"></app-profile>
+  </div>
 </div>

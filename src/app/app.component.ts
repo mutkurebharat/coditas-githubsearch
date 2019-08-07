@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'git-app';
+  gitUsers: any = [];
+  onsearch($event) {
+    this.gitUsers = $event;
+    console.log($event);
+  }
 }
