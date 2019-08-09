@@ -1,6 +1,23 @@
-<div class="container-fluid">
-  <app-header (onsearch)="onsearch($event)"></app-header>
-  <div *ngIf="gitUsers.length > 0">
-    <app-profile *ngFor="let gitUser of gitUsers" [gitUser]="gitUser"></app-profile>
+<!-- <div class="container-fluid"> -->
+<app-header (onsort)="sortUsers($event)" (onsearch)="onsearch($event)"></app-header>
+<div class="container-fluid profile-background">
+  <div class="container" *ngIf="gitUsers.length > 0">
+    <!-- Total Records section -->
+    <div class="row">
+      <div class="col-md-12">
+        <p class="total-records-lbl">Total Result : {{count}}</p>
+      </div>
+    </div>
+    <!-- User cards -->
+    <app-profile *ngFor="let gitUser of gitUsers | paginate: { id: 'foo',
+          itemsPerPage: 3,
+          currentPage: page,
+          totalItems: count }" [gitUser]="gitUser">
+    </app-profile>
+    <div class="text-right" *ngIf="count > 0">
+      <pagination-controls id="foo" directionLinks="false" (pageChange)="onPageChange($event)">
+      </pagination-controls>
+    </div>
   </div>
 </div>
+<!-- </div> -->

@@ -6,10 +6,8 @@
     background-color: #fff;
 }
 
-.profile-img{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+img{
+    width: 130px;
 }
 
 .details{
@@ -19,4 +17,19 @@
     height: 300px;
     overflow: scroll;
     overflow-x: hidden;
+}
+
+.user-cards-row{
+    padding: 0 15px;
+    margin-bottom: 15px;
+}
+.top-20{
+    position: relative;
+    top: 20px;
+}
+.card-body{
+    padding: 0;
+}
+.row-cust{
+    padding: 15px;
 }

@@ -1,3 +1,6 @@
 select, input{
     margin-top: 15px;
 }
+.pad-lr{
+    padding: 0 15px;
+}

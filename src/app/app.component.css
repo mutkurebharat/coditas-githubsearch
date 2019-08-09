@@ -1,0 +1,9 @@
+.profile {
+    margin: 0 auto;
+}
+.total-records-lbl{
+    font-size: 14px;
+    color: darkgray;
+    margin-top: 15px;
+    margin-left: 15px;
+}
