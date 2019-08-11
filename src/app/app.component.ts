@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'git-app';
   gitUsers: any = [];
   page = 0;
-  count = 0;
+  count = null;
   searchKey = '';
 
   onsearch($event) {
@@ -34,8 +34,6 @@ export class AppComponent {
   }
 
   onPageChange(event) {
-    console.log('dsfdsf', event);
-
     this.gitService.getUsersBySearch(this.searchKey, event)
       .subscribe(res => {
         console.log(res);
@@ -45,6 +43,6 @@ export class AppComponent {
         // this.onsearch.emit({gitUsers: res.items, searchKey: this.searchKey});
       }, err => {
         console.log(err);
-      });;
+      });
   }
 }

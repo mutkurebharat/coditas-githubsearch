@@ -4,3 +4,10 @@ select, input{
 .pad-lr{
     padding: 0 15px;
 }
+
+.input-group-addon{
+    display: inline-block;
+    position: relative;
+    left: 682px;
+    bottom: 32px;
+}

@@ -10,9 +10,14 @@
           <option value="lower">Rank (&#x2193;)</option>
         </select>
       </div>
-      <div class="form-group col-md-8">
-        <input type="searchUsers" (keyup.enter)="searchUserOnEnter(searchKey)" [(ngModel)]="searchKey"
-          class="form-control" id="searchUsers">
+      <div class="form-group has-search col-md-8">
+        <input 
+          type="searchUsers" 
+          (keyup.enter)="searchUserOnEnter(searchKey)" 
+          [(ngModel)]="searchKey"
+          class="form-control" 
+          id="searchUsers">
+          <div class="input-group-addon"><i class="fa fa-search"></i></div>
       </div>
     </div>
   </div>

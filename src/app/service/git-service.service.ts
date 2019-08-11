@@ -14,11 +14,12 @@ export class GitServiceService {
 
   public getUsersBySearch(searchKey: string, pagenumber=1): Observable<any> {
     return this.http.get(`${this.BASEURL}${apiURLS.search}?q=${searchKey}+"&page=${pagenumber}&per_page=3&rel=next"`);
-    // return this.http.get(`${this.BASEURL}${apiURLS.search}?q=${searchKey}`);
   }
+
   public getReposOfUser(username: string): Observable<any> {
     return this.http.get(`${this.BASEURL}${apiURLS.users(username)}`);
   }
+
   public getAny(url: string): Observable<any> {
     return this.http.get(`${url}`);
   }

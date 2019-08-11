@@ -1,7 +1,6 @@
-<!-- <div class="container-fluid"> -->
 <app-header (onsort)="sortUsers($event)" (onsearch)="onsearch($event)"></app-header>
 <div class="container-fluid profile-background">
-  <div class="container" *ngIf="gitUsers.length > 0">
+  <div class="container" *ngIf="gitUsers.length > 0;else noRecordFound">
     <!-- Total Records section -->
     <div class="row">
       <div class="col-md-12">
@@ -14,10 +13,14 @@
           currentPage: page,
           totalItems: count }" [gitUser]="gitUser">
     </app-profile>
-    <div class="text-right" *ngIf="count > 0">
+    <div class="text-right" style="padding-right: 15px;" *ngIf="count > 3">
       <pagination-controls id="foo" directionLinks="false" (pageChange)="onPageChange($event)">
       </pagination-controls>
     </div>
   </div>
+  <ng-template #noRecordFound>
+    <div class="container text-center">
+      <p *ngIf="count == 0">No Records Found</p>
+    </div>
+  </ng-template>
 </div>
-<!-- </div> -->

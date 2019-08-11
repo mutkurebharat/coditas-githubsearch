@@ -3,15 +3,15 @@
     <div class="card">
       <div class="card-body">
         <div class="row row-cust">
-          <div class="col-md-2" style="text-align: center;">
+          <div class="col-md-2" class="user-img">
             <img [src]="gitUser.avatar_url" class="img rounded-circle">
           </div>
           <div class="col-md-10 top-20">
             <h3>{{gitUser.login}}</h3>
-            <p>Profile Url: {{gitUser.html_url}} </p>
-            <p style="margin: 0;">Data One: Value One</p>
+            <p>Profile Url: <a href="{{gitUser.html_url}}">{{gitUser.html_url}} </a></p>
+            <p class="score;">Score : {{gitUser.score.toFixed(2)}}</p>
             <p>
-              Data Two: Value Two
+              Type : {{gitUser.type}}
               <button class="btn btn-outline-primary float-right" (click)="getUserRepos()"
                 style="position: relative; bottom: 15px;">Details</button>
             </p>
@@ -20,58 +20,18 @@
         <!-- Details section -->
         <div *ngIf="repos">
           <div class="overflow" *ngIf="isCollapsed">
-            <!-- <div class="col"> -->
             <table class="table table-striped">
               <tr *ngFor="let repo of repos">
                 <td>{{repo.name}}</td>
                 <td>{{repo.language}}</td>
-                <td title="open issue"><span></span> Issue <span class="badge badge-secondary">{{repo.open_issues_count}}</span></td>
-                <td>{{repo.watchers}} Followers</td>
-                <td>{{repo.forks_count}} Forks</td>
+                <td title="open issue"> Issue <span class="badge badge-secondary">{{repo.open_issues_count}}</span></td>
+                <td>Followers <span class="badge badge-info">{{repo.watchers}}</span></td>
+                <td>Forks <span class="badge badge-dark">{{repo.forks_count}} </span></td>
               </tr>
             </table>
-            <!-- </div> -->
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<!-- <div class="profile-background">
-          <div class="prof row justify-content-center align-items-center">
-            <div class="jumbotron">
-              <div class="col-md-2 float-left">
-                <img [src]="gitUser.avatar_url" class="profile-img">
-              </div>
-              <div class="col-md-8 float-left">
-                <h3>{{gitUser.login}}</h3>
-                <p>Profile Url: {{gitUser.html_url}} </p>
-                <p>Data One: Value One</p>
-                <p>Data Two: Value Two</p>
-              </div>
-              <button class="btn btn-primary" type="button" (click)="getUserRepos()" class="details">Details
-              </button>
-        
-              <div class="col-sm-12" *ngIf="repos">
-                <div class="row overflow" *ngIf="isCollapsed">
-                  <div class="col">
-                      <table class="table table-striped">
-                        <tr *ngFor="let repo of repos">
-                          <td>{{repo.name}}</td>
-                          <td>{{repo.language}}</td>
-                          <td>{{repo.open_issues_count}} Open Issue</td>
-                          <td>{{repo.watchers}} Followers</td>
-                          <td>{{repo.forks_count}} Forks</td>
-                        </tr>
-                      </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-<!-- 
-
-  
- -->

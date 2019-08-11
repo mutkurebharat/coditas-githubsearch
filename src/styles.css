@@ -8,8 +8,7 @@ body{
 }
 .profile-background {
   background-color: #F6F6F6;
-  max-height: 100em;
-  height: 100vh;
+  height: 100%;
 }
 
 .card{
